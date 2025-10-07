@@ -156,7 +156,7 @@ def main():
     beam = None  # ゲーム初期化時にはビームは存在しない
     clock = pg.time.Clock()
     tmr = 0
-    # score = Score() #クラススコア途中
+    
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT:
@@ -184,13 +184,7 @@ def main():
                     beam, bombs[b] = None, None
                     bird.change_img(6, screen)
         bombs = [bomb for bomb in bombs if bomb is not None]
-
-        # class Score: #クラススコア途中
-        #     def __init__(self):
-        #         self.fonto = pg.font.SysFont("hgp創英角ﾎﾟｯﾌﾟ体", 30)
-        #         score.color = (0, 0, 255)
-        #         score = 0
-        #         self.img = self.fonto.render("スコア:" + f'{score}', 0, self.color)
+        
 
         key_lst = pg.key.get_pressed()
         bird.update(key_lst, screen)
